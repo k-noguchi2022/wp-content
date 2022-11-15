@@ -1,0 +1,152 @@
+/**************************
+setting
+**************************/
+
+//color variables
+$font-base: #2b2b2b;
+$footer-blue: #003fc8;
+$yellow: #efff6f;
+
+$normal-back: #e6eefe;
+$news-back: #f8ffe9;
+$member-back: #ffe5de;
+$accommodations-back: #e0dff6;
+
+$headline-back: #527dd9;
+$headline-eng: #e4ff41;
+
+$events-eat: #ff6a41;
+$events-play: #00a1ff;
+$events-watch: #00df68;
+
+$events-status: #fa6772;
+$events-finish: #8c96a5;
+
+$walk-east: #00baa5;
+$walk-northeast: #ff6bdf;
+$walk-west: #ff8060;
+
+//media query
+$breakpoint: 900px;
+
+@mixin sp {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+//title
+.TITLEWrap {
+  margin-bottom: 40px;
+  .TITLEContainer-ST {
+    background-color: $headline-back;
+    height: 160px;
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: -40px;
+    .TITLEImg-ST {
+      margin: 0 auto;
+    }
+    .japaneseTITLE-ST {
+      color: #ffffff;
+      font-size: 24px;
+    }
+    .englishTITLE-PO {
+      .englishTITLE-ST {
+        color: $headline-eng;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        font-weight: bold;
+      }
+      .TITLELine-ST {
+        border-bottom: 1pt solid $headline-eng;
+        position: relative;
+        &::before {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          height: 0;
+          width: 0;
+          left: calc(50% - 14px);
+          top: calc(100% - 6px);
+          border-style: solid;
+          border-width: 7px;
+          border-color: transparent $headline-eng transparent transparent;
+          z-index: 1;
+        }
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          height: 0;
+          width: 0;
+          left: calc(50% - 16px);
+          top: calc(100% - 10px);
+          border-style: solid;
+          border-width: 9px;
+          border-color: transparent $headline-back transparent transparent;
+          z-index: 1;
+        }
+      }
+    }
+    .TITLEContainerLine-ST {
+      margin-top: 39px;
+      background-image: linear-gradient(
+        to right,
+        #a1b9e6,
+        #a1b9e6 3px,
+        transparent 3px
+      );
+      background-size: 6px 2px;
+      background-repeat: repeat-x;
+      height: 2px;
+    }
+  }
+}
+
+@mixin contentsTitleLine($lineWidth) {
+  .TITLEContainer-ST {
+    .englishTITLE-PO {
+      width: $lineWidth;
+      margin: 0 auto;
+    }
+  }
+}
+
+@mixin mixBorder($borderColor, $backColor) {
+  background-image: linear-gradient(
+    to right,
+    $borderColor,
+    $borderColor 3px,
+    $backColor 2px,
+    $backColor 3px
+  );
+  background-size: 6px 2px;
+  background-repeat: repeat-x;
+  height: 3px;
+}
+
+.pc {
+  display: block !important;
+  @include sp() {
+    display: none !important;
+  }
+}
+.sp {
+  display: none !important;
+  @include sp() {
+    display: block !important;
+  }
+}
+
+//font
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: $font-base;
+}

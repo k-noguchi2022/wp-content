@@ -1,0 +1,125 @@
+@use "../setting" as *;
+/**************************
+後援案内
+**************************/
+
+.page-support {
+  background-color: $normal-back;
+  padding: 15px;
+  letter-spacing: 1px;
+
+  @include pc {
+    padding: 20px 45px 20px 45px;
+  }
+  .square {
+    border: 2px solid $headline-back;
+    border-radius: 2vh;
+    width: min(90%, 1300px);
+    margin: 0 auto;
+  }
+  .headline {
+    margin-top: -3px;
+    border: none;
+    z-index: 1;
+    padding-top: 15px;
+    @include pc {
+      padding: 20px 15px 0 15px;
+    }
+    background-color: $headline-back;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  .headlineLeft {
+    text-align: center;
+  }
+  .top {
+    margin-bottom: 0;
+    @include pc {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      margin-bottom: 5px;
+    }
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+  }
+  .headlineRight {
+    text-align: right;
+  }
+  .streetLamp {
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    padding-top: 30px;
+    width: min(90%, 341px);
+    @include pc {
+      margin: 0 auto 0 0;
+      display: inline-block;
+      text-align: right;
+      vertical-align: bottom;
+      padding: 0;
+    }
+  }
+  .info {
+    padding: 15px 0;
+    background-color: #ffffff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  .infoContents {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .list {
+    line-height: 1.7;
+    padding: 5px 0;
+  }
+  .sentence {
+    letter-spacing: 2px;
+    line-height: 1.5;
+  }
+  .blueBack {
+    padding: 10px;
+    margin-top: 30px;
+  }
+  .TITLE {
+    padding-top: 15px;
+  }
+  .tellphoneNumber {
+    text-decoration: none;
+    color: $font-base;
+  }
+  .downLoadBTN {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #7d9fd9;
+    text-decoration: none;
+    color: #003fc8;
+  }
+  .is-style-download-button:hover {
+    color: black;
+  }
+  .vividPink {
+    color: #fa6772;
+  }
+  .address {
+    line-height: 1.7;
+  }
+  .btn_text {
+    margin-top: 45px;
+    color: #00a1c6;
+    border: 1px solid #00a1c6;
+    height: 60px;
+    width: 320px;
+    background-color: #fff;
+    border-radius: 4px;
+    font: 16px;
+  }
+  .btn_text:hover {
+    color: #fff;
+    background-color: #00a1c6;
+  }
+}

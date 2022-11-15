@@ -1,0 +1,69 @@
+//normalize
+@use "common/normalize";
+
+//common
+@use "setting";
+@use "common/common";
+@use "common/header";
+@use "common/footer";
+
+//search-form
+@use "common/search-form";
+
+//block
+@use "block/block-style";
+
+//front
+@use "front/front";
+
+//walking
+@use "walking/archive-walking";
+@use "walking/single-walking";
+
+//news
+@use "news/archive-news";
+@use "news/single-news";
+
+//events
+@use "events/archive-events";
+@use "events/single-events";
+
+//tour
+@use "tour/tour";
+
+//features
+@use "features/archive-features";
+@use "features/single-features";
+
+//accommodations
+@use "accommodations/archive-accommodations";
+
+//member
+@use "member/archive-member";
+@use "member/single-member";
+
+//about
+@use "about/about";
+@use "about/application";
+@use "about/application-form";
+@use "about/application-form-thanks";
+@use "about/support";
+
+//access
+@use "access/access";
+
+//contact
+@use "contact/contact";
+@use "contact/contact-thanks";
+
+//information
+@use "information/information";
+
+//term
+@use "term/term";
+
+//privacy
+@use "privacy/privacy";
+
+//search
+@use "search/search";

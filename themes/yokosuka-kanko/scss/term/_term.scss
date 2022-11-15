@@ -1,0 +1,47 @@
+@use "../setting" as *;
+/**************************
+利用規約
+**************************/
+
+.page-terms {
+  background-color: $normal-back;
+  padding: 15px;
+  letter-spacing: 1px;
+  @include pc {
+    padding: 20px 45px 20px 45px;
+  }
+  .square {
+    background-color: #ffffff;
+    border-radius: 2vh;
+    width: min(90%, 1300px);
+    margin: 0 auto;
+  }
+  .headline {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 2px dotted #7d9fd9;
+    font-size: 18px;
+    font-weight: bold;
+    @include pc {
+      font-size: 25px;
+    }
+  }
+  .info {
+    padding: 15px 0;
+    background-color: #ffffff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  .infoContents {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .TITLE {
+    padding-top: 15px;
+    font-size: 14px;
+  }
+  .TXT {
+    font-size: 14px;
+  }
+}

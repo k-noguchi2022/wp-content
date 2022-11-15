@@ -1,0 +1,135 @@
+/* 独自スタイル用 */
+//ブロックエディタの独自スタイルにあてるcssを記載する
+.is-style-headline-H2 {
+  border-radius: 10px;
+  border: 2px solid #2a74ff;
+  text-align: left;
+  color: #2a74ff;
+  position: relative;
+  display: block;
+  white-space: pre-wrap;
+  padding: 5%;
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: calc(100% - 30px);
+    top: calc(100% - 13px);
+    border-style: solid;
+    border-width: 11px;
+    border-color: transparent transparent transparent #2a74ff;
+    z-index: 1;
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: calc(100% - 31px);
+    top: calc(100% - 22px);
+    border-style: solid;
+    border-width: 15px;
+    border-color: transparent transparent transparent white;
+    z-index: 1;
+  }
+}
+
+.is-style-headline-H3 {
+  border-bottom: 2px solid #2a74ff;
+  text-align: left;
+  color: #2a74ff;
+  position: relative;
+  display: block;
+  white-space: pre-wrap;
+  padding-bottom: 5px;
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: calc(100% - 30px);
+    top: calc(100% - 13px);
+    border-style: solid;
+    border-width: 11px;
+    border-color: transparent transparent transparent #2a74ff;
+    z-index: 1;
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: calc(100% - 31px);
+    top: calc(100% - 22px);
+    border-style: solid;
+    border-width: 15px;
+    border-color: transparent transparent transparent white;
+    z-index: 1;
+  }
+}
+
+.is-style-border {
+  border-bottom: 2px dotted black;
+  min-width: 100%;
+  margin: 10px auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+
+.is-style-shadow-button {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid #7d9fd9;
+
+  /*--影の複数指定--*/
+  box-shadow: 5px 5px 0 #8eadf0;
+  transition: 0.4s;
+}
+
+.is-style-shadow-button:hover {
+  /*--影の複数指定--*/
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #8eadf0;
+}
+
+.is-style-pdf-button {
+  display: inline-block;
+  height: 50px;
+  background-color: white;
+  border-radius: 2px;
+  border: 2px solid #7d9fd9;
+}
+
+.pdfLogo::after {
+  content: url(../img/about/icon-pdf.png);
+  display: inline-block;
+  text-align: right;
+
+  padding: 0;
+  right: 500px;
+}
+
+.is-style-pdf-button:hover {
+  background-color: #7d9fd9;
+  border: 2px solid white;
+}
+.is-style-download-button {
+  display: inline-block;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #7d9fd9;
+  text-decoration: none;
+  color: #003fc8;
+}
+// .is-style-download-button:hover {
+//   background-color: #7d9fd9;
+//   color: #ffffff;
+// }

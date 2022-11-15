@@ -1,0 +1,171 @@
+@use "../setting" as *;
+/**************************
+header
+**************************/
+
+@mixin menu-img($img-url) {
+  content: "";
+  display: block;
+  margin: 0 auto 3px auto;
+  width: 40px;
+  height: 40px;
+  background: $img-url;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.header-space {
+  height: 90px;
+}
+
+.header {
+  //width: 100vw;
+  height: 90px;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+
+  .container {
+    display: flex;
+    width: min(90%, 1400px);
+    height: 100%;
+    align-items: center;
+    margin: 0 auto;
+
+    .header-logo {
+      height: 70%;
+      margin-right: 5%;
+      img {
+        height: 100%;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $font-base;
+      font-size: 12px;
+    }
+
+    .menu {
+      width: 70%;
+      align-items: center;
+      margin-right: 20px;
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      &-wrapper {
+        display: flex;
+        text-align: center;
+        width: 100%;
+        justify-content: flex-end;
+      }
+      .menu-header-menu-container {
+        width: 100%;
+      }
+
+      &-item {
+        width: 100px;
+        list-style-type: none;
+        @include pc {
+          width: min(12%, 100px);
+        }
+
+        &:hover {
+          opacity: 0.6;
+          a {
+            color: $yellow;
+          }
+        }
+      }
+
+      &-tour a::before {
+        @include menu-img(url(../img/menu/menu_tour.png));
+      }
+      &-events a::before {
+        @include menu-img(url(../img/menu/menu_events.png));
+      }
+      &-accommodations a::before {
+        @include menu-img(url(../img/menu/menu_accommodations.png));
+      }
+      &-activity a::before {
+        @include menu-img(url(../img/menu/menu_activity.png));
+      }
+      &-feature a::before {
+        @include menu-img(url(../img/menu/menu_tour.png));
+      }
+      &-access a::before {
+        @include menu-img(url(../img/menu/menu_events.png));
+      }
+      &-contact a::before {
+        @include menu-img(url(../img/menu/menu_mail.png));
+        background-position: bottom;
+        width: 30px;
+      }
+    }
+  }
+
+  .menu-hamburger {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+  }
+}
+
+#g-nav {
+  position: fixed;
+  z-index: 999;
+  /*ナビのスタート位置と形状*/
+  top: 0;
+  right: -120%;
+  width: 280px;
+  height: 100%; /*ナビの高さ*/
+  background: #ffffff;
+  /*動き*/
+  transition: all 0.6s;
+
+  /*アクティブクラスがついたら位置を0に*/
+  &.panel-active {
+    right: 0;
+    //left: 0;
+
+    #g-nav-list {
+      /*ナビの数が増えた場合縦スクロール*/
+      position: fixed;
+      z-index: 999;
+      width: 280px;
+      height: 100%; /*表示する高さ*/
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  ul {
+    /*ナビゲーション天地中央揃え*/
+
+    padding-left: 0;
+  }
+  .menu_sp {
+    position: absolute;
+    z-index: 999;
+    top: 400px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .search-form_sp {
+      width: fit-content;
+      margin: 30px auto 50px auto;
+    }
+  }
+
+  //sp menu のレイアウト
+  .menu-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    grid-gap: 30px 20px;
+    width: 220px;
+    margin: 0 auto;
+  }
+}

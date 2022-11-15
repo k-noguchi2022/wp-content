@@ -1,0 +1,43 @@
+@use "../setting" as *;
+/**************************
+search-form
+**************************/
+.search_container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  //border-bottom: 2px solid $footer-blue;
+  padding-left: 5px;
+  //border-radius: 30px;
+  height: 2.3em;
+  width: 180px;
+  // overflow: hidden;
+
+  input[type="text"] {
+    border: none;
+    height: 2em;
+    width: 80%;
+    background-color: transparent;
+    padding-left: 10px;
+    border: 3px solid $footer-blue;
+
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .search_img {
+    position: absolute;
+    right: -5px;
+    // width: 35px;
+    // height: 35px;
+    height: 100%;
+    width: auto;
+    display: block;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,243 @@
+@use "../setting" as *;
+/**************************
+お知らせ詳細
+**************************/
+.main {
+  background-color: $news-back;
+  text-align: center;
+}
+
+.titleBorder-PO {
+  @include mixBorder(#a1b9e6, #ffffff);
+}
+.titleEyeCatch-PO {
+  @include sp {
+    @include mixBorder(#a1b9e6, $news-back);
+  }
+}
+
+.titleSetting-PO {
+  padding: 2% 5%;
+  text-align: left;
+  background-color: #fff;
+  letter-spacing: 0.02em;
+
+  .newsTITLE-SK {
+    padding: 0% 5%;
+    font-size: 100%;
+    line-height: 150%;
+    @include pc {
+      padding: 0% 8.5%;
+      font-size: 125%;
+    }
+  }
+
+  .dateTimeTXT-SK {
+    padding: 0% 5%;
+    color: #7e7e7e;
+    font-size: 80%;
+    @include pc {
+      padding: 0% 8.5%;
+      color: #7e7e7e;
+      font-size: 85%;
+    }
+  }
+}
+
+.eyeCatch-SK {
+  margin: 1px auto;
+  @include pc {
+    padding: 3.5% 0% 1.75% 0%;
+    border: none;
+    margin: 0% auto;
+    width: min(90%, 800px);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    @include pc {
+      border-radius: 2vh;
+    }
+  }
+}
+
+.content-PO {
+  border: solid 2px #c8e551;
+  border-radius: 1vh;
+  background-color: #fff;
+  margin: 8% auto;
+  width: min(90%, 1300px);
+  @include pc {
+    border-radius: 4vh;
+    box-sizing: border-box;
+    margin: 0% auto;
+  }
+}
+
+.content-ST {
+  padding: 2% 12% 5% 12%;
+  text-align: left;
+  letter-spacing: 0.02em;
+  @include pc {
+    padding: 4% 8.5% 8% 8.5%;
+  }
+
+  h2 {
+    position: relative;
+    color: #2360e5;
+    width: 100%;
+    font-size: 95%;
+    padding: 4% 0%;
+    @include pc {
+      font-size: 110%;
+      margin: 6% 0% 0% 0%;
+      padding: 0% 0% 1.5% 0%;
+    }
+  }
+
+  h2:before {
+    background-color: #2360e5;
+    border-radius: 1.5em;
+    content: "";
+    display: inline-block;
+    height: 0.5em;
+    width: 1.2em;
+    margin: 0% 3% 0.5% 0%;
+    @include pc {
+      width: 1.7em;
+      margin: 0% 2% 0.25% 0%;
+    }
+  }
+
+  h2:after {
+    content: "";
+    @include mixBorder(#a1b9e6, #fff);
+    width: 100%;
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  h3 {
+    position: relative;
+    color: #2360e5;
+    width: 100%;
+    font-size: 90%;
+    padding: 0%;
+    @include pc {
+      font-size: 100%;
+      margin: 6% 0% 0% 0%;
+      padding: 0% 0% 1.5% 0%;
+    }
+  }
+
+  h3:before {
+    background-color: #2360e5;
+    border-radius: 1.5em;
+    content: "";
+    display: inline-block;
+    height: 0.3em;
+    width: 0.8em;
+    margin: 0% 3% 0.5% 0%;
+    @include pc {
+      height: 0.35em;
+      margin: 0% 1% 0.25% 0%;
+    }
+  }
+
+  h3:after {
+    @include pc {
+      content: "";
+      @include mixBorder(#a1b9e6, #fff);
+      width: 100%;
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  p {
+    font-size: 90%;
+    line-height: 190%;
+    margin: 15px 0px;
+    @include pc {
+      font-size: 100%;
+    }
+  }
+
+  a {
+    color: $font-base;
+  }
+
+  ul {
+    font-size: 85%;
+    line-height: 200%;
+    padding-inline-start: 8%;
+    @include pc {
+      font-size: 100%;
+      line-height: 225%;
+      padding-left: 50px;
+    }
+  }
+
+  ol {
+    font-size: 85%;
+    line-height: 200%;
+    padding-inline-start: 8%;
+    @include pc {
+      font-size: 100%;
+      line-height: 225%;
+      padding-left: 50px;
+    }
+  }
+  li {
+    @include pc {
+      padding-left: 15px;
+    }
+  }
+
+  li::marker {
+    color: #2360e5;
+    @include pc {
+      font-weight: lighter;
+    }
+  }
+}
+
+figure {
+  padding: 10px 0px;
+  border-radius: 2vh;
+  object-fit: cover;
+  @include pc {
+    padding: 30px 0px;
+    border-radius: 4vh;
+  }
+}
+
+.returnBTN-SK {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 100%;
+  font-weight: bold;
+  color: $footer-blue;
+  border: medium solid $footer-blue;
+  background-color: #fff;
+  padding: 2.5% 6.5%;
+  border-radius: 100vh;
+  margin: 0% 0% 10% 0%;
+  letter-spacing: 0.1em;
+  @include pc {
+    font-size: 90%;
+    padding: 1.5% 2%;
+    margin: 3% 0% 7% 0%;
+  }
+}
+
+.returnBTN-SK:hover {
+  color: #fff;
+  background-color: $footer-blue;
+}

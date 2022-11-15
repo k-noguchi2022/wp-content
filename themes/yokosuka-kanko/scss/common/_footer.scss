@@ -1,0 +1,126 @@
+@use "../setting" as *;
+/**************************
+footer
+**************************/
+//footerの上の空間確保用
+.footer-space {
+  height: 16vw;
+  @include pc {
+    height: 7vw;
+  }
+}
+
+.footer {
+  width: 100%;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    aspect-ratio: 375/60;
+    background-image: url(../img/footer/footer_wave_sp.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -16vw;
+
+    @include pc {
+      aspect-ratio: 1366/100;
+      background-image: url(../img/footer/footer_wave_pc.svg);
+      top: -7vw;
+    }
+  }
+
+  .wave {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    &:hover {
+      color: $yellow;
+    }
+  }
+
+  .footer-content {
+    background-color: $footer-blue;
+    padding: 0 5%;
+    z-index: 999;
+
+    .footer-inner {
+      margin: 0 auto;
+      width: min(100%, 375px);
+      display: grid;
+      grid-template-columns: 7fr 8fr;
+      grid-template-areas:
+        "logo logo"
+        "menu1 menu2"
+        "copy copy";
+
+      @include pc {
+        padding-top: 20px;
+        width: min(100%, 1200px);
+        grid-template-columns: 2fr 3fr 2fr;
+        grid-template-areas:
+          "logo menu1 menu2"
+          "copy copy copy";
+      }
+
+      ul {
+        padding-left: 0px;
+      }
+      .menu-item {
+        list-style-type: none;
+        line-height: 1.5;
+      }
+
+      .footer-logo {
+        grid-area: logo;
+        margin: 0 auto;
+        width: fit-content;
+
+        @include pc {
+          margin-top: 5%;
+        }
+        img {
+          width: 100px;
+          height: 100px;
+          @include pc {
+            width: 120px;
+            height: 120px;
+          }
+        }
+      }
+      .footer_menu_left {
+        grid-area: menu1;
+
+        @include pc {
+          column-count: 3;
+        }
+      }
+      .footer_menu_right {
+        grid-area: menu2;
+      }
+
+      .sub-menu {
+        padding-left: 10px;
+        a::before {
+          content: "- ";
+        }
+      }
+
+      .copyright {
+        grid-area: copy;
+        background-color: $footer-blue;
+        text-align: center;
+        color: white;
+        padding: 5px 0;
+        font-size: 8px;
+      }
+    }
+  }
+}

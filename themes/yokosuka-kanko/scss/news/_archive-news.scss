@@ -1,0 +1,168 @@
+@use "../setting" as *;
+/**************************
+お知らせ一覧
+**************************/
+.main {
+  background-color: $news-back;
+  text-align: center;
+  @include contentsTitleLine($lineWidth: 100px);
+}
+a {
+  text-decoration: none;
+}
+
+.content_base {
+  text-align: center;
+  margin: 30px 0px;
+  @media screen and (max-width: 375px) {
+    margin: 30px 8px;
+  }
+  @include pc {
+    margin: 80px auto;
+    width: 900px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
+    column-gap: 40px;
+    row-gap: 15px;
+  }
+}
+
+.contentArea {
+  text-align: center;
+  border: solid 2px #c8e551;
+  border-radius: 1vh;
+  background-color: #fff;
+  margin: 15px auto;
+  width: min(100%, 340px);
+  @media screen and (max-width: 375px) {
+    width: min(95%, 320px);
+  }
+  @include pc {
+    margin: 18px auto;
+    width: min(100%, 500px);
+    height: min(100%, 125px);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 0.6fr 0.85fr 1fr;
+    grid-template-rows: (2, minmax(200px, auto));
+    grid-template-areas:
+      "archiveEyeCatch archiveDate archiveTerm"
+      "archiveEyeCatch archiveTitle archiveTitle";
+    @media screen and (max-width: 375px) {
+      grid-template-columns: 0.85fr 1.1fr 1.1fr;
+    }
+    @include pc {
+      grid-template-columns: 0.85fr 1.1fr 1.1fr;
+    }
+  }
+  .archiveEyeCatch {
+    grid-area: archiveEyeCatch;
+    text-align: left;
+    margin: 12%;
+    img {
+      width: 65px;
+      height: 65px;
+      object-fit: cover;
+      border-radius: 1vh;
+      @include pc {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 1vh;
+      }
+    }
+  }
+
+  .archiveDate {
+    grid-area: archiveDate;
+    margin-top: 10px;
+    margin-left: 5px;
+    text-align: left;
+    @include pc {
+      margin-top: 25px;
+    }
+    time {
+      color: #7e7e7e;
+      font-size: 80%;
+      letter-spacing: 0.02em;
+      @include pc {
+        font-size: 95%;
+      }
+    }
+  }
+
+  .archiveTerm {
+    grid-area: archiveTerm;
+    margin-top: 11.5px;
+    text-align: left;
+    P {
+      color: #fff;
+      font-size: 65%;
+      letter-spacing: 0.1em;
+      margin: 0%;
+      padding: 3px 5px;
+      display: inline-block;
+      background-color: $headline-back;
+      border-radius: 0.5vh;
+      @include pc {
+        margin-top: 12px;
+        font-size: 80%;
+      }
+    }
+    p:empty {
+      background-color: initial;
+    }
+  }
+
+  .archiveTitle {
+    grid-area: archiveTitle;
+    color: $font-base;
+    margin-left: 5px;
+    text-align: left;
+    h2 {
+      margin: 0% 12px 12px 0%;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      font-size: 80%;
+      letter-spacing: 0.05em;
+      line-height: 1.3em;
+      overflow: hidden;
+      @include pc {
+        margin: 0% 25px 12px 0%;
+        font-size: 90%;
+      }
+    }
+  }
+}
+
+.pagination {
+  margin: 0 auto;
+  text-align: center;
+  .page-numbers {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    border-radius: 50%;
+    font-size: 1rem;
+    color: $footer-blue;
+    text-decoration: none;
+    line-height: 30px;
+    margin-bottom: 30px;
+    &.prev {
+      background-color: $footer-blue;
+      color: $yellow;
+    }
+    &.next {
+      background-color: $footer-blue;
+      color: $yellow;
+    }
+    &.current {
+      background-color: #ffffff;
+    }
+  }
+}
